@@ -39,14 +39,16 @@ const CartProductCard = ({ cartItem: item }) => {
     setCart(addedCart);
   };
   return (
-    <li className="flex flex-col md:flex-row rounded-lg shadow-md mb-3 gap-5 p-5">
-      <div className="rounded-2xl flex justify-center bg-white">
-        <img src={image} className="max-w-xs  shrink-0 px-10" />
+    <li className="card flex flex-col items-center justify-between md:flex-row rounded-lg shadow-lg gap-5 p-5 py-10 max-h-[600px]">
+      <div className="flex justify-center items-center rounded-2xl my-auto p-10 w-[200px] h-full max-h-[400px] bg-white">
+        <img src={image} className="" />
       </div>
-      <div className="flex flex-col items-start my-5 gap-3">
-        <div className="text-base-content badge badge-ghost">{category}</div>
+      <div className="flex flex-col gap-3 w-full ">
+        <div className="text-base-content badge badge-ghost capitalize">
+          {category}
+        </div>
         <h2
-          className="font-bold text-2xl"
+          className="font-bold text-2xl hover:underline cursor-pointer"
           onClick={() => {
             console.log("clicked");
             navigate(`/product/${id}`, {
@@ -56,28 +58,29 @@ const CartProductCard = ({ cartItem: item }) => {
         >
           {title}
         </h2>
-        <h3 className="leading-5">{description}</h3>
 
-        <div className="flex w-full items-center mt-2 ">
-          <button
-            className="text-xl font-extrabold btn btn-primary rounded-r-none"
-            onClick={handleMinus}
-          >
-            <AiOutlineMinus />
-          </button>
-          <div className="bg-base-200 h-12 flex items-center justify-center text-xl w-1/3 text-base-content">
-            {quantity}
+        <div className="flex w-full items-center justify-between mt-2 ">
+          <div className="flex">
+            <button
+              className="text-xl font-extrabold btn btn-primary rounded-r-none w-18"
+              onClick={handleMinus}
+            >
+              <AiOutlineMinus />
+            </button>
+            <div className="bg-base-200 h-12 flex items-center justify-center text-xl w-24 text-base-content">
+              {quantity}
+            </div>
+            <button
+              className="btn btn-primary rounded-l-none text-xl w-18 font-extrabold"
+              onClick={() => {
+                console.log("clicked");
+                handlePlus();
+              }}
+            >
+              <AiOutlinePlus />
+            </button>
           </div>
-          <button
-            className="btn btn-primary rounded-l-none text-xl font-extrabold"
-            onClick={() => {
-              console.log("clicked");
-              handlePlus();
-            }}
-          >
-            <AiOutlinePlus />
-          </button>
-          <div className="text-3xl ml-auto">{`$${price?.toLocaleString()}`}</div>
+          <div className="text-3xl pr-5">{`$${price?.toLocaleString()}`}</div>
         </div>
       </div>
     </li>

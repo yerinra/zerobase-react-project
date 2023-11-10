@@ -50,11 +50,8 @@ const NavBar = ({ showMenu, setShowMenu }) => {
       <div className="flex items-center shrink-0">
         <div className="ml-2">
           <button
-            className="md:hidden block btn bg-inherit border-none"
-            onClick={() => {
-              setShowMenu(true);
-              console.log("clicked!");
-            }}
+            className={"md:hidden block btn bg-inherit border-none"}
+            onClick={() => setShowMenu(true)}
           >
             <FaBars />
           </button>

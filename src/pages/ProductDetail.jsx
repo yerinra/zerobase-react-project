@@ -11,22 +11,17 @@ const ProductDetail = () => {
   const { cart, setCart } = useCart();
 
   const handleAddItem = () => {
-    setCart(
-      cart.map((item) => {
-        if (item.id === id) return item;
-        else
-          return {
-            id,
-            title,
-            price,
-            quantity: 1,
-            description,
-            rating,
-            category,
-            image,
-          };
-      })
-    );
+    const product = {
+      id,
+      title,
+      price,
+      quantity: 1,
+      description,
+      rating,
+      category,
+      image,
+    };
+    setCart([...cart, product]);
   };
 
   return (
@@ -58,7 +53,8 @@ const ProductDetail = () => {
           <div className="flex gap-3">
             <button
               className="btn btn-primary text-slate-100"
-              onClick={() => handleAddItem(id)}
+              onClick={handleAddItem}
+              disabled={cart.filter((item) => item.id == id).length !== 0}
             >
               Add To Bag
             </button>

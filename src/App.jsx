@@ -12,6 +12,7 @@ import EachCategory from "./pages/EachCategory";
 import Footer from "./components/Footer";
 import { ProductsProvider } from "./context/ProductsContext";
 import { CartContextProvider } from "./context/CartContext";
+import ScrollToTop from "./components/ScrollTop";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => {
       <ProductsProvider>
         <CartContextProvider>
           <Router>
+            <ScrollToTop />
             <div className="fixed top-0 z-50">
               {showMenu && (
                 <div
