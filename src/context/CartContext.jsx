@@ -9,7 +9,7 @@ export function CartContextProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cart));
-    console.log("저장");
+    // console.log("저장");
   }, [cart]);
 
   return (

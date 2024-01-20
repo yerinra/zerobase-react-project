@@ -9,7 +9,7 @@ const Cart = () => {
     (prevItem, currItem) => prevItem + currItem.price * currItem.quantity,
     0
   );
-  const showModal = () => {};
+  // const showModal = () => {};
   return (
     <div className="flex flex-col px-10 py-10 gap-5 bg-base-100">
       <div className="text-3xl font-extrabold pb-5">SHOPPING BAG</div>

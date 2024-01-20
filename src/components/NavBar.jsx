@@ -141,7 +141,6 @@ const NavBar = ({ showMenu, setShowMenu }) => {
           className="text-3xl px-3 pr-5"
           onClick={() => navigate("/cart")}
         >
-          {/* btn btn-ghost  */}
           <BiShoppingBag />
           {cart && cart.length > 0 && (
             <div className="absolute top-5 flex items-center justify-center right-5 bg-secondary h-4 w-5 font-bold text-base-100 rounded-full text-[10px]">

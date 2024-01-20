@@ -6,19 +6,22 @@ const carouselInfo = [
   {
     id: "women",
     title: "SHOP FOR WOMEN",
-    url: "./assets/womens.jpg",
+    url: "/assets/womens.jpg",
+
     desc: "Handpicked daily from the world’s best brands ",
   },
   {
     id: "men",
     title: "SHOP FOR MEN",
-    url: "./assets/mens.jpg",
+    url: "/assets/mens.jpg",
+
     desc: "Here, you’ll find everything you need for men.",
   },
   {
     id: "jewelery",
     title: "SHOP ACCESSORIES",
-    url: "./assets/acc.jpg",
+    url: "/assets/acc.jpg",
+
     desc: "Look out for impactful accessories.",
   },
 ];
@@ -37,6 +40,7 @@ const CarouselSlide = () => {
           className={`hero h-[220px] lg:h-screen relative`}
           style={{ backgroundImage: `url(${banner.url})` }}
         >
+          {/* <img src={banner.img} className="w-full -z-1" /> */}
           <div className="hero-content text-center">
             <div className="max-w-md text-slate-900 p-10">
               <h1 className=" text-3xl lg:text-4xl font-bold ">
@@ -45,7 +49,7 @@ const CarouselSlide = () => {
               <p className="text-sm lg:text-lg py-6">{banner.desc}</p>
               <button
                 className="btn btn-sm lg:btn-md"
-                onClick={() => navigate(`/${banner.id}`)}
+                onClick={() => navigate(`${banner.id}`)}
               >
                 Shop Now
               </button>
